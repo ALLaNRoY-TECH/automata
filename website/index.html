@@ -43,11 +43,11 @@
   color-scheme: light;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   margin: 0; background: var(--parch); color: var(--ink);
   font-family: var(--f-body); font-size: 17px; line-height: 1.55;
-  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; overflow-x: clip;
 }
 body::after { /* paper grain */
   content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 90; opacity: .35; mix-blend-mode: multiply;
