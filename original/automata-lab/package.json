@@ -1,0 +1,13 @@
+{
+  "name": "automata-lab",
+  "private": true,
+  "description": "NFA to DFA conversion lab (static site) and its test suite",
+  "scripts": {
+    "test": "node tests/run-all.js",
+    "test:fast": "node tests/run-all.js --no-browser",
+    "test:e2e": "node tests/e2e.test.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.40.0"
+  }
+}
