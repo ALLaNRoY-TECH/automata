@@ -98,11 +98,10 @@ a { color: inherit; }
 .nav-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: var(--brass); transform-origin: 0 50%; transform: scaleX(0); z-index: 51; }
 @media (max-width: 760px) { .nav-links li:not(.keep) { display: none; } }
 
+/* ---------- A. opening ---------- */
 .hero { padding-top: calc(env(safe-area-inset-top, 0px) + 84px); padding-bottom: 40px; }
-.hero.wrap { padding-left: 0; padding-right: 0; }
-.hero .inner { max-width: 100%; margin: 0; }
-.hero-sheet { border-radius: 0; box-shadow: none; border-left: none; border-right: none; padding: clamp(28px, 4vw, 56px) clamp(20px, 4vw, 64px) clamp(28px, 3vw, 40px) clamp(44px, 6vw, 110px); overflow: hidden; }
-.hero-sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: clamp(24px, 4vw, 68px); width: 1.5px; background: rgba(184,115,92,.55); }
+.hero-sheet { padding: clamp(28px, 4vw, 56px) clamp(18px, 4vw, 60px) clamp(28px, 3vw, 40px) clamp(40px, 7vw, 110px); overflow: hidden; }
+.hero-sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: clamp(26px, 4.6vw, 72px); width: 1.5px; background: rgba(184,115,92,.55); }
 .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .stamp { font-family: var(--f-hand); font-size: 22px; color: var(--forest); border: 2px solid var(--forest); padding: 0 12px; border-radius: 6px; transform: rotate(-2deg); display: inline-block; }
 .tuple { font-family: var(--f-display); font-style: italic; font-size: clamp(20px, 2.2vw, 28px); }
@@ -138,7 +137,8 @@ a { color: inherit; }
 .mate-tag .hand { font-size: clamp(19px, 2vw, 27px); line-height: 1; }
 .mate-tag .math { font-size: clamp(15px, 1.5vw, 19px); color: var(--brass-ink); }
 .bubble { position: absolute; bottom: 92%; left: 30%; transform: translate(0, 6px) scale(.9); transform-origin: 0 100%; background: var(--paper); border: 1.6px solid var(--ink); border-radius: 18px 18px 18px 4px; padding: 6px 12px; font-family: var(--f-hand); font-size: clamp(17px, 1.7vw, 22px); line-height: 1.1; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .455s, transform .545s var(--ease); z-index: 3; box-shadow: 2px 3px 0 var(--sand); }
-.mate.talk .bubble { opacity: 1; transform: none; }
+.mate:hover, .mate:focus-visible, .mate.talk { z-index: 10; }
+.mate:hover .bubble, .mate:focus-visible .bubble, .mate.talk .bubble { opacity: 1; transform: none; }
 .mate:nth-child(n+4) .bubble { left: auto; right: 30%; border-radius: 18px 18px 4px 18px; transform-origin: 100% 100%; }
 .idle .mate .fig { animation: breathe 10.909s ease-in-out infinite; transform-origin: 50% 100%; }
 .idle .mate:nth-child(odd) .fig { animation-delay: -4s; } .idle .mate:nth-child(3n) .fig { animation-delay: -7.273s; }
@@ -657,12 +657,12 @@ table.tt { width: 100%; border-collapse: collapse; font-family: var(--f-mono); f
       <div class="sheet ruled hero-sheet">
         <div class="hero-top">
           <span class="stamp">FLA project · NFA → DFA</span>
-          <div class="tuple" id="tuple" aria-label="M equals Q, Sigma, delta, q zero, F">M = (<span data-sym="allan">Q</span>, <span data-sym="aadhi">Σ</span>, <span data-sym="pranet">δ</span>, <span data-sym="abhinesh">q₀</span>, <span data-sym="haritha">F</span>)</div>
+          <div class="tuple" id="tuple" aria-label="M equals Q, Sigma, delta, q zero, F">M = (<span data-sym="allan">Q</span>, <span data-sym="aaditya">Σ</span>, <span data-sym="pranet">δ</span>, <span data-sym="abhinesh">q₀</span>, <span data-sym="haritha">F</span>)</div>
         </div>
         <h1 class="hero-title"><span class="w">Every state</span><span class="l2"><span class="w">has a story</span><svg class="acc-dot" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" pathLength="1"/><circle class="core" cx="20" cy="20" r="8"/></svg></span><span class="anno anno-1" aria-hidden="true"><svg viewBox="0 0 62 40"><path d="M60 6 C42 4 22 10 6 30 M6 30 L5 18 M6 30 L18 28" pathLength="1"/></svg>a double circle is<br>a happy ending</span></h1>
         <div class="lineup" id="lineup"></div>
         <div class="hero-foot">
-          <p class="hero-lede">Six friends, one machine. Each of us is one piece of a finite automaton. <em>Tap us to say hi,</em> then scroll and watch us turn into one.</p>
+          <p class="hero-lede">Six friends, one machine. Each of us is one piece of a finite automaton. <em>Hover over us to say hi,</em> then scroll and watch us turn into one.</p>
           <div class="hero-actions"><a class="btn" href="#cast">Meet the cast ↓</a><a class="btn btn--quiet" href="#lab" data-go="lab">Skip to the lab</a></div>
         </div>
       </div>

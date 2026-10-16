@@ -2,7 +2,7 @@
 
 An interactive NFA → DFA conversion lab for a Formal Languages and Automata course. It is a plain static site with no build step: open `index.html` in a browser.
 
-- **Story:** a scroll-driven introduction where six friends (Allan Q, Aadhi Σ, Pranet δ, Abhinesh q₀, Haritha F, Neha ε) each sketch one part of an NFA.
+- **Story:** a scroll-driven introduction where six friends (Allan Q, Aaditya Σ, Pranet δ, Abhinesh q₀, Haritha F, Neha ε) each sketch one part of an NFA.
 - **Lab:** four stages.
   1. Type, draw or load an NFA.
   2. See the NFA transition table.

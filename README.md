@@ -4,7 +4,7 @@ An interactive NFA → DFA conversion lab for a Formal Languages and Automata co
 
 ## Overview
 
-- **The Story:** A scroll-driven introduction where six characters (Allan $Q$, Aadhi $\Sigma$, Pranet $\delta$, Abhinesh $q_0$, Haritha $F$, Neha $\varepsilon$) each sketch one part of a finite automaton.
+- **The Story:** A scroll-driven introduction where six characters (Allan $Q$, Aaditya $\Sigma$, Pranet $\delta$, Abhinesh $q_0$, Haritha $F$, Neha $\varepsilon$) each sketch one part of a finite automaton.
 - **The Lab:** 
   1. **Stage 1 (Your NFA):** Type, draw, or load an NFA with live SVG preview and alphabet declaration.
   2. **Stage 2 (NFA Table):** Transition table display with state mapping.

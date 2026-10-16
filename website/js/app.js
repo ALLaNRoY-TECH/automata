@@ -31,7 +31,11 @@
   const lit = (id, on) => { const s = $(`#tuple [data-sym="${id}"]`); if (s) s.classList.toggle('is-lit', on); };
   $$('.mate').forEach((m) => {
     ['mouseenter', 'focus'].forEach((e) => m.addEventListener(e, () => lit(m.dataset.id, true)));
-    ['mouseleave', 'blur'].forEach((e) => m.addEventListener(e, () => lit(m.dataset.id, false)));
+    ['mouseleave', 'blur'].forEach((e) => m.addEventListener(e, () => {
+      lit(m.dataset.id, false);
+      m.classList.remove('talk', 'hop');
+      clearTimeout(m._t);
+    }));
     m.addEventListener('click', () => {
       $$('.mate.talk').forEach((x) => x !== m && x.classList.remove('talk'));
       m.classList.remove('hop'); void m.offsetWidth; m.classList.add('hop', 'talk');
@@ -76,7 +80,7 @@
   const FLOOR = 340, FIG_S = .425; // figures 25% larger than the original .34 (user request)
   const rowX = [100, 212, 324, 436, 548, 660];
   const target = ['q0', 'q0', 'q1', 'q1', 'q2', 'q2'];
-  const stageOrder = ['allan', 'aadhi', 'pranet', 'abhinesh', 'haritha', 'neha'];
+  const stageOrder = ['allan', 'aaditya', 'pranet', 'abhinesh', 'haritha', 'neha'];
   stageSvg.innerHTML =
     `<g class="sigma" transform="translate(40 34)"><text x="0" y="26">Σ =</text><rect x="52" y="0" width="36" height="36" rx="3"/><text class="chip" x="70" y="25" text-anchor="middle">0</text><rect x="98" y="0" width="36" height="36" rx="3"/><text class="chip" x="116" y="25" text-anchor="middle">1</text></g>` +
     Render.graph(Render.nfaModel(N1), SP, { r: 44 }) +
@@ -99,7 +103,7 @@
   const CAPS = [
     { who: null, text: 'Six friends stand on a line. Nothing is defined yet. Keep scrolling, and each of us draws one piece of the machine.', formal: 'M = ( ?, ?, ?, ?, ? )' },
     { who: 'allan', text: 'Allan counts the places the machine can be, and the six of us fold into three states. That list is Q.', formal: 'Q = {q₀, q₁, q₂}' },
-    { who: 'aadhi', text: 'Aadhi hands out the only symbols this world can read. Nothing else is allowed on the tape. That set is Σ.', formal: 'Σ = {0, 1}' },
+    { who: 'aaditya', text: 'Aaditya hands out the only symbols this world can read. Nothing else is allowed on the tape. That set is Σ.', formal: 'Σ = {0, 1}' },
     { who: 'pranet', text: 'Pranet draws the arrows. δ tells each state where to go on each symbol, and from q₀ a single 1 leads to two places.', formal: 'δ(q₀,0) = {q₀}   δ(q₀,1) = {q₀,q₁}   δ(q₁,0) = δ(q₁,1) = {q₂}' },
     { who: 'abhinesh', text: 'Abhinesh walks in first. Every run of the machine starts at q₀, the state with the arrow marked start.', formal: 'start state: q₀' },
     { who: 'haritha', text: 'Haritha draws the second circle. If the input ends while we are in q₂, the string is accepted. That set is F.', formal: 'F = {q₂}' },
